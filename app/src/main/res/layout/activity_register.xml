@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="40dp"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/username_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_icon"
+                android:layout_marginTop="5dp"
+                android:gravity="center">
+
+                <!--用户名编辑框-->
+
+                <!--用户图标-->
+                <EditText
+                    android:id="@+id/login_input_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/edittext_selector"
+                    android:hint="用户名"
+                    android:minHeight="40dp"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="60dp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="#95A1AA"
+                    android:textCursorDrawable="@drawable/edittext_cursor" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="21dp"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:background="@mipmap/user"
+                    android:visibility="visible" />
+
+                <!--隐藏删除用户名按钮-->
+                <Button
+                    android:id="@+id/del_username_btn"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@mipmap/delete"
+                    android:visibility="invisible" />
+            </FrameLayout>
+
+            <!--密码行布局-->
+            <FrameLayout
+                android:id="@+id/passwd_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/username_layout"
+                android:layout_marginTop="0dp"
+                android:gravity="center">
+
+                <!--密码编辑框-->
+                <EditText
+                    android:id="@+id/login_input_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_selector"
+                    android:hint="密码"
+                    android:inputType="textPassword"
+                    android:maxLength="20"
+                    android:minHeight="40dp"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="60dp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="#95A1AA"
+                    android:textCursorDrawable="@drawable/edittext_cursor" />
+
+                <!--密码图标-->
+
+                <EditText
+                    android:id="@+id/login_input_password2"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_selector"
+                    android:hint="密码"
+                    android:inputType="textPassword"
+                    android:maxLength="20"
+                    android:minHeight="40dp"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="60dp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="#95A1AA"
+                    android:textCursorDrawable="@drawable/edittext_cursor" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="21dp"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:background="@mipmap/passwd" />
+
+                <!--隐藏显示密码按钮-->
+                <Button
+                    android:id="@+id/passwd_eye_btn"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@mipmap/eye"
+                    android:visibility="invisible" />
+
+                <!--隐藏删除密码按钮-->
+                <Button
+                    android:id="@+id/del_passwd_btn"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="45dp"
+                    android:background="@mipmap/delete"
+                    android:visibility="invisible" />
+            </FrameLayout>
+
+            <!--注册按钮-->
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/passwd_layout"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginRight="10dp"
+
+                android:background="@drawable/button_selector"
+                android:gravity="center"
+                android:text="注册"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

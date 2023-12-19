@@ -86,7 +86,7 @@
                 android:minHeight="40dp"
                 android:paddingLeft="40dp"
                 android:paddingRight="60dp"
-                android:hint="手机号码/用户名"
+                android:hint="用户名"
                 android:textColorHint="#95A1AA"
                 android:textColor="@android:color/white"
                 android:textCursorDrawable="@drawable/edittext_cursor"
@@ -224,3 +224,4 @@
 
     </RelativeLayout>
 </RelativeLayout>
+<!--i love you-->
