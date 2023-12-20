@@ -1,25 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    tools:context=".MainActivity">
 
-    <include
-        android:id="@+id/app_bar_main"
-        layout="@layout/app_bar_main"
+
+    <com.haibin.calendarview.CalendarLayout
+        android:id="@+id/calendarLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="vertical"
+        app:calendar_content_view_id="@+id/rv_todo"
+        app:calendar_show_mode="both_month_week_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
+        <com.haibin.calendarview.CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            app:calendar_padding_left="22dp"
+            app:calendar_padding_right="10dp"
+            app:current_day_lunar_text_color="#ff0000"
+            app:current_day_text_color="#ff0000"
+            app:current_month_lunar_text_color="#CFCFCF"
+            app:current_month_text_color="#333333"
+            app:lunar_text_size="10sp"
+            app:max_year="2050"
+            app:max_year_day="31"
+            app:max_year_month="12"
+            app:min_year="2008"
+            app:min_year_day="1"
+            app:min_year_month="1"
+            app:month_view="com.example.calendar.custom.CustomMonthView"
+            app:month_view_show_mode="mode_only_current"
+            app:other_month_lunar_text_color="#e1e1e1"
+            app:other_month_text_color="#e1e1e1"
+            app:scheme_lunar_text_color="#CFCFCF"
+            app:scheme_text="假"
+            app:scheme_text_color="#333"
+            app:scheme_theme_color="#128c4b"
+            app:selected_lunar_text_color="#128c4b"
+            app:selected_text_color="#128c4b"
+            app:selected_theme_color="#80cfcfcf"
+            app:week_background="#fff"
+            app:week_bar_height="46dp"
+            app:week_line_background="#00000000"
+            app:week_line_margin="16dp"
+            app:week_start_with="sun"
+            app:week_text_size="10sp"
+            app:year_view_background="#f6f6f6"
+            app:year_view_day_text_color="#333333"
+            app:year_view_day_text_size="8sp"
+            app:year_view_month_text_color="#ff0000"
+            app:year_view_month_text_size="20sp"
+            app:year_view_scheme_color="#f17706"
+            app:year_view_week_height="0dp"
+            app:year_view_week_text_color="#666666"
+            app:year_view_week_text_size="7sp" />
+
+
+        <LinearLayout
+            android:id="@+id/rv_todo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dayTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:textColor="@color/grey"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/calendarLayout" />
+
+            <ListView
+                android:id="@+id/tipsView"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dayTime" />
+
+        </LinearLayout>
+
+
+    </com.haibin.calendarview.CalendarLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addTipFltBtn"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
-</androidx.drawerlayout.widget.DrawerLayout>
+        android:layout_height="309dp"
+        android:layout_marginRight="175dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="#FFC107"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@android:drawable/ic_input_add" />
+</androidx.constraintlayout.widget.ConstraintLayout>

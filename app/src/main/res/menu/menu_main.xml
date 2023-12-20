@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.finallywork.MainActivity.MainActivity">
+    <item
+        android:id="@+id/test1"
+        android:orderInCategory="100"
+        android:title="测试1"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/test2"
+        android:title="测试2" />
+
+    <item
+        android:id="@+id/test3"
+        android:title="测试3" />
+    <item
+        android:id="@+id/test4"
+        android:title="测试4" />
+</menu>

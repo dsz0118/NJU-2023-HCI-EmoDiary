@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+<!--    <files-path name="my_files" path="path" />
+代表内部存储的files目录，与Context.getFilesDir()获取的路径对应。
+最终生成的Uri格式为：authorities/pathname/filename
+示例：content://com.example.app.fileprovider/my_files/filexxx.jpg-->
+
+<!--  <cache-path name="name" path="path" />
+代表与getCacheDir()相同的文件路径,所获取的目录路径：/data/data/<包名>/cache-->
+
+<!--<external-cache-path name="name" path="path" />
+代表与Context.getExternalCacheDir()相同的文件路径,
+所获取的目录路径：/storage/emulate/0/Android/data/<包名>/cache
+如/storage/emulated/0/Android/data/com.example.finallywork/cache/-->
+
+
+<!--<external-path name="name" path="path" />
+代表与Environment.getExternalStorageDirectory()相同的文件路径,所获取的目录路径：
+/storage/emulated/0/
+安卓10之后getExternalStorageDirectory被废弃，根据官方用到了getExternalFilesDir
+-->
+
+<!-- <external-files-path name="name" path="path" />
+代表与Context.getExternalFilesDir()相同的文件路径,
+所获取的目录路径：/storage/emulate/0/Android/data/<包名>/files
+getExternalFilesDir(null)参数传入的为null，这样默认访问的是files文件夹，我们可以指定子文件夹
+File externalFilesDir = getExternalFilesDir("Caches");
+这个目录会在应用被卸载的时候删除，而且访问这个目录不需要动态申请STORAGE权限。-->
+
+
+<!--external-media-path：表示外部媒体区域根目录中的文件，
+对应Context.getExternalMediaDirs()所获取的目录路径：/storage/emulated/0/Android/media/<包名>-->
+
+<external-cache-path name="image_path" path="/"/></paths>
+<!--代表content Uris的路径-->
+<!--    name属性是这个文件夹的别名，path属性是这个文件夹的真实路径名称-->
+
+
+<!--File filePath = new File(Context.getFilesDir(), "my_log");
+File newFile = new File(filePath, "my_log.log");
+// 生成Uri
+Uri contentUri = FileProvider.getUriForFile(getContext(), "com.example.app.fileprovider", newFile);-->
+<!--在配置paths时，paths的子标签必须和获取目录的代码保持对应。如果用的是Context.getFilesDir(),
+paths文件中必须包含files-path子标签，不然别的app获取uri时会出现异常。-->
+
+
+<!--第一部分-->
+
+<!--都是getExternalCacheDir-->
+<!--/storage/emulated/0/Android/data/com.example.finallywork/cache/1652243042429-->
+
+<!--如果用external-cache-path生成url
+content://com.gdvictor.ivhelmet.fileprovider/image_path/1652242757111-->
+
+<!--如果用 external-path生成url-->
+<!--  content://com.gdvictor.ivhelmet.fileprovider/image_path/Android/data/com.example.finallywork/cache/1652242873483-->
+
+<!--解:external-cache-path将/storage/emulated/0/Android/data/com.example.finallywork/cache/映射成content://com.gdvictor.ivhelmet.fileprovider/image_path/-->
+<!--解:external-path      将/storage/emulated/0                                           映射成content://com.gdvictor.ivhelmet.fileprovider/image_path/-->
+
+
+<!-- getExternalFilesDir-->
+ <!--/storage/emulated/0/Android/data/com.example.finallywork/files/1652243706240-->
+
+<!-- external-files-path-->
+<!--content://com.gdvictor.ivhelmet.fileprovider/image_path/1652243607044-->
+
+<!--external-path-->
+<!-- content://com.gdvictor.ivhelmet.fileprovider/image_path/Android/data/com.example.finallywork/files/1652243475316-->
+
+
+
+
+<!--第二部分-->
+
+<!-- external-files-path-->
+<!--imageTemp=new File(getExternalFilesDir(null), filename)得到/storage/emulated/0/Android/data/com.example.finallywork/files/1652279752655-->
+<!--FileProvider.getUriForFile(this, "com.gdvictor.ivhelmet.fileprovider", imageTemp)得到uri
+content://com.gdvictor.ivhelmet.fileprovider/image_path/1652279752655-->
+
+
+<!-- external-path-->
+<!--imageTemp=new File(getExternalFilesDir(null), filename)得到/storage/emulated/0/Android/data/com.example.finallywork/files/1652279752655-->
+<!--FileProvider.getUriForFile(this, "com.gdvictor.ivhelmet.fileprovider", imageTemp)得到uri
+content://com.gdvictor.ivhelmet.fileprovider/image_path/Android/data/com.example.finallywork/files/1652280209500-->

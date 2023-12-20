@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EditActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_height="40dp"
+            android:layout_width="200dp"
+            android:id="@+id/dateInput"
+            style="@style/addEditView"
+            android:hint="选择日期"
+            android:background="@android:drawable/editbox_background" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/startTimeInput"
+            android:layout_height="40dp"
+            android:layout_width="100dp"
+            style="@style/addEditView"
+            android:hint="00:00"
+            android:background="@android:drawable/editbox_background"/>
+
+        <TextView
+            android:id="@+id/endTimeInput"
+            android:layout_height="40dp"
+            android:layout_width="100dp"
+            style="@style/addEditView"
+            android:hint="00:00"
+            android:background="@android:drawable/editbox_background"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/tipTitleInput"
+        style="@style/addEditView"
+        android:hint="标题"
+        android:background="@android:drawable/editbox_background"
+        android:layout_height="40dp"/>
+    <EditText
+        android:id="@+id/tipContentInput"
+        style="@style/addEditView"
+        android:hint="内容"
+        android:background="@android:drawable/editbox_background"
+        android:layout_height="150dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imageInput"
+            style="@style/addEditView"
+            android:layout_height="250dp"
+            android:background="@android:drawable/editbox_background"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <View
+            style="@style/space"/>
+        <Button
+            android:id="@+id/cclBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="取消"/>
+        <View
+            style="@style/space"/>
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="添加"/>
+        <View
+            style="@style/space"/>
+    </LinearLayout>
+
+
+</LinearLayout>
